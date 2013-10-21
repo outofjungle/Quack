@@ -57,4 +57,7 @@ public class ComposeActivity extends Activity {
 		etCompose = (EditText) findViewById(R.id.etCompose);
 	}
 
+	public void onCancel(View v) {
+		ComposeActivity.this.finish();
+	}
 }

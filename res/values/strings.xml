@@ -10,5 +10,6 @@
     <string name="refresh_text">Refresh</string>
     <string name="title_activity_compose">Tweet</string>
     <string name="tweet_text">Tweet</string>
+    <string name="cancel_text">Cancel</string>
 
 </resources>
