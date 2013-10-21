@@ -47,6 +47,10 @@
             android:name="com.outofjungle.apps.quack.TimelineActivity"
             android:label="@string/title_activity_timeline" >
         </activity>
+        <activity
+            android:name="com.outofjungle.apps.quack.ComposeActivity"
+            android:label="@string/title_activity_compose" >
+        </activity>
     </application>
 
 </manifest>
