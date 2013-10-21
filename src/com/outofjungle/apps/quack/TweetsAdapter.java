@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,10 @@ public class TweetsAdapter extends ArrayAdapter<Tweet>{
 				tweet.getUser().getName(),
 				tweet.getUser().getScreenName());
 		nameView.setText(Html.fromHtml(formattedName));
+		Log.d("DEBUG", tweet.getUser().getJSONString());
 		
 		TextView bodyView = (TextView) view.findViewById(R.id.tvBody);
-		bodyView.setText(Html.fromHtml(tweet.getBody()));
+		bodyView.setText(Html.fromHtml(tweet.getText()));
 		
 		return view;
 	}

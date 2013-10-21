@@ -13,20 +13,12 @@ public class Tweet extends BaseModel {
 		return user;
 	}
 	
-	public String getBody() {
+	public String getText() {
 		return getString("text");
 	}
 
 	public long getId() {
 		return getLong("id");
-	}
-	
-	public boolean isFavorited() {
-		return getBoolean("fvorited");
-	}
-	
-	public boolean isRetweeted() {
-		return getBoolean("retweeted");
 	}
 	
 	public static Tweet fromJson(JSONObject jsonObject) {
