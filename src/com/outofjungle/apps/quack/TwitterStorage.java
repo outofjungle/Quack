@@ -81,4 +81,8 @@ public class TwitterStorage {
 	    }
 		return tweets;
 	}
+	
+	public void clear() {
+		twitterDatabase.delete(TwitterStorageHelper.TABLE_TWEETS, null, null);
+	}
 }

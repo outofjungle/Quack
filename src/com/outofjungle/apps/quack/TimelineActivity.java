@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -66,10 +67,14 @@ public class TimelineActivity extends Activity {
 				@Override
 				public void onSuccess(JSONArray jsonTweets) {
 					tweets = Tweet.fromJson(jsonTweets);
+					Log.d("DEBUG", String.format("Network available. Fetched %s items from twitter...", tweets.size()));
 					adapter.clear();
 					adapter.addAll(tweets);
 					lvTweets.setAdapter(adapter);
+					datasource.clear();
+					Log.d("DEBUG", "Database cleared...");
 					datasource.save(tweets);
+					Log.d("DEBUG", String.format("Database updated with %s items...", tweets.size()));
 					dialog.dismiss();
 				}
 				
@@ -80,6 +85,7 @@ public class TimelineActivity extends Activity {
 			});
 		} else {
 			tweets = datasource.fetch();
+			Log.d("DEBUG", String.format("No network. Fetched %s items from database...", tweets.size()));
 			adapter.clear();
 			adapter.addAll(tweets);
 			lvTweets.setAdapter(adapter);
@@ -88,6 +94,7 @@ public class TimelineActivity extends Activity {
 	}
 
 	public void onRefreshAction(MenuItem item) {
+		Log.d("DEBUG", "Reloading...");
 		refreshTimeline();
 	}
 	
