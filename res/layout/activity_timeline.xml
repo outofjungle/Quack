@@ -4,13 +4,12 @@
     android:layout_height="match_parent"
     tools:context=".TimelineActivity" >
 
-    <fragment
-        android:id="@+id/fragmentTweets"
-        android:name="com.outofjungle.apps.quack.fragments.HomeTimelineFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        tools:layout="@layout/fragment_tweets_list" />
+        android:layout_centerVertical="true" >
+    </FrameLayout>
     
 </RelativeLayout>

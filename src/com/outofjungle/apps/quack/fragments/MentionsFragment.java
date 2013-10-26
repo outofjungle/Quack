@@ -10,27 +10,22 @@ import android.util.Log;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.outofjungle.apps.quack.QuackApp;
-import com.outofjungle.apps.quack.TwitterStorage;
 import com.outofjungle.apps.quack.models.Tweet;
 
-public class HomeTimelineFragment extends TweetsListFragment {
-	
+public class MentionsFragment extends TweetsListFragment {
+
 	private ArrayList<Tweet> tweets;
-	private TwitterStorage datasource;
-	
-	@Override
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		tweets = new ArrayList<Tweet>();
-		datasource = new TwitterStorage(getActivity());
-		datasource.open();
-		refreshTimeline();
+		refreshMentions();
 	}
 	
-	private void refreshTimeline() {
+	private void refreshMentions() {
 
 		if ( isNetworkAvailable() ) {
-			QuackApp.getRestClient().getHomeTimeLine(new JsonHttpResponseHandler(){
+			QuackApp.getRestClient().getMentions(new JsonHttpResponseHandler(){
 	
 				@Override
 				public void onSuccess(JSONArray jsonTweets) {
@@ -38,24 +33,13 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
 					getAdapter().clear();
 					getAdapter().addAll(tweets);
-					
-
-					datasource.clear();
-					datasource.save(tweets);
 				}
 				
 				@Override
 				public void onFailure(Throwable e, JSONObject error) {
-					Log.d("DEBUG", "failed to fetch home timeline");
+					Log.d("DEBUG", "failed to fetch @mentions");
 				}
 			});
-		} else {
-			tweets = datasource.fetch();
-			Log.d("DEBUG", String.format("No network. Fetched %s items from database...", tweets.size()));
-			
-			getAdapter().clear();
-			getAdapter().addAll(tweets);
-			
-		}
+		}	
 	}
 }
