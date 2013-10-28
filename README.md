@@ -15,3 +15,4 @@
 ![Screenshot 4](https://github.com/outofjungle/Quack/raw/master/screenshot4.png)
 ![Screenshot 5](https://github.com/outofjungle/Quack/raw/master/screenshot5.png)
 ![Screenshot 6](https://github.com/outofjungle/Quack/raw/master/screenshot6.png)
+![Screenshot 7](https://github.com/outofjungle/Quack/raw/master/screenshot7.png)
