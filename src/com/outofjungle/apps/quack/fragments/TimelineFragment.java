@@ -12,7 +12,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.outofjungle.apps.quack.QuackApp;
 import com.outofjungle.apps.quack.models.Tweet;
 
-public class UserTimelineFragment extends TweetsListFragment {
+public class TimelineFragment extends TweetsListFragment {
 
 	private ArrayList<Tweet> tweets;
 

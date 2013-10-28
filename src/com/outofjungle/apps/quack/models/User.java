@@ -1,9 +1,13 @@
 package com.outofjungle.apps.quack.models;
 
+import java.io.Serializable;
+
 import org.json.JSONObject;
 
-public class User extends BaseModel {
-	
+public class User extends BaseModel implements Serializable {
+
+	private static final long serialVersionUID = 6354896382853726205L;
+
 	public String getName() {
 		return getString("name");
 	}

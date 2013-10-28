@@ -8,22 +8,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ProfileActivity" >
 
-    <fragment
-        android:id="@+id/fragmentProfile"
-        android:name="com.outofjungle.apps.quack.fragments.ProfileFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/fragmentUserTimeline"
-        android:layout_alignParentTop="true"
-        tools:layout="@layout/fragment_profile" />
-    
-    <fragment
-        android:id="@+id/fragmentUserTimeline"
-        android:name="com.outofjungle.apps.quack.fragments.UserTimelineFragment"
+    <FrameLayout
+        android:id="@+id/frame_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/fragmentProfile"
-        tools:layout="@layout/fragment_tweets_list" />
+        android:layout_alignParentTop="true" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_timeline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/frame_profile">
+	</FrameLayout>
 
 </RelativeLayout>

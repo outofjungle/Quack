@@ -37,7 +37,6 @@ public class ProfileFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 	}
 	
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -45,9 +44,8 @@ public class ProfileFragment extends Fragment {
 		loadProfileInfo();
 	}
 	
-	private void loadProfileInfo() {
-		
-		QuackApp.getRestClient().getMyInfo(
+	protected void loadProfileInfo() {
+		QuackApp.getRestClient().getMyInfo( 
 				new JsonHttpResponseHandler() {
 					@Override
 					public void onSuccess(JSONObject json) {
@@ -57,7 +55,7 @@ public class ProfileFragment extends Fragment {
 					}
 				});
 	}
-
+	
 	protected void populateProfileHeader(User user) {
 		ImageView ivProfileImage = (ImageView) getActivity().findViewById(R.id.ivProfileImage);
 		TextView tvName = (TextView) getActivity().findViewById(R.id.tvName);
