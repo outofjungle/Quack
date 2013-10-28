@@ -52,6 +52,10 @@
             android:name="com.outofjungle.apps.quack.ComposeActivity"
             android:label="@string/title_activity_compose" >
         </activity>
+        <activity
+            android:name="com.outofjungle.apps.quack.ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
     </application>
 
 </manifest>

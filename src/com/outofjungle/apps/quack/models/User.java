@@ -20,6 +20,18 @@ public class User extends BaseModel {
 		return getString("profile_image_url");
 	}
 	
+	public int getFollowersCount() {
+		return getInt("followers_count");
+	}
+	
+	public int getFriendsCount() {
+		return getInt("friends_count");
+	}
+	
+	public String getTagLine() {
+		return getString("description");
+	}
+	
 	public static User fromJson(JSONObject json) {
 		User u = new User();
 		try {

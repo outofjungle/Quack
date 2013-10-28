@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <RelativeLayout
+        android:id="@+id/rlProfileHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+        
+        <ImageView 
+            android:id="@+id/ivProfileImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+        	android:layout_alignParentTop="true"
+        	android:layout_marginRight="10dp"
+        	android:src="@android:drawable/screen_background_light_transparent" />
+        <TextView 
+            android:id="@+id/tvName"
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_toRightOf="@+id/ivProfileImage"
+        	android:text="Name"
+        	android:textSize="16sp"/>
+        <TextView 
+            android:id="@+id/tvTagLine"
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignLeft="@+id/tvName"
+        	android:layout_below="@+id/tvName"
+        	android:text="Tag"
+        	android:textSize="12sp"/>
+
+    </RelativeLayout>
+        <LinearLayout 
+            android:id="@+id/llStats"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@+id/rlProfileHeader"
+        	android:layout_marginTop="10dp"
+        	android:layout_marginBottom="10dp"
+            >
+        <TextView 
+            android:id="@+id/tvFollowing"
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="Followers"
+        	android:textSize="14sp"/>
+        <TextView 
+            android:id="@+id/tvFollowers"
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="Following"
+        	android:textSize="14sp"
+        	android:layout_marginLeft="30dp"/>
+        </LinearLayout>
+
+</RelativeLayout>

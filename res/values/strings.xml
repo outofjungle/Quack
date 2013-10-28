@@ -8,8 +8,11 @@
     <string name="username">User</string>
     <string name="compose_text">Compose Tweet</string>
     <string name="refresh_text">Refresh</string>
+    <string name="profile_text">Profile</string>
     <string name="title_activity_compose">Tweet</string>
     <string name="tweet_text">Tweet</string>
     <string name="cancel_text">Cancel</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
